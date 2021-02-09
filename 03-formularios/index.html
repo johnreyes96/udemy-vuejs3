@@ -13,6 +13,13 @@
 <body>
     <div id="app">
         <h1>{{ title }}</h1>
+        <form>
+            <input v-model.trim="data.name" placeholder="Nombre" type="text">
+        </form>
+
+        <p>
+            {{ data }}
+        </p>
     </div>
 
     <script src="./js/main.js"></script>

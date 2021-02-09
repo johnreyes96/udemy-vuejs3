@@ -1,5 +1,8 @@
 const app = Vue.createApp({
     data: () => ({
-        title: "Formularios"
+        title: "Formularios",
+        data: {
+            name: ""
+        }
     })
 });
