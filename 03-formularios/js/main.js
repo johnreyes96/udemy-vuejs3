@@ -3,7 +3,8 @@ const app = Vue.createApp({
         title: "Formularios",
         data: {
             name: "",
-            age: 15
+            age: 15,
+            langs: []
         }
     })
 });

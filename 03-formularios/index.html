@@ -17,6 +17,18 @@
             <input v-model.trim="data.name" placeholder="Nombre" type="text">
 
             <input v-model.number="data.age" min="15" max="100" type="number">
+
+            <hr>
+
+            <h2>Lenguajes Favoritos</h2>
+            <input v-model="data.langs" value="js" id="js" type="checkbox">
+            <label for="js">JavaScript</label>
+
+            <input v-model="data.langs" value="php" id="php" type="checkbox">
+            <label for="php">PHP</label>
+
+            <input v-model="data.langs" value="py" id="py" type="checkbox">
+            <label for="py">Python</label>
         </form>
 
         <p>
