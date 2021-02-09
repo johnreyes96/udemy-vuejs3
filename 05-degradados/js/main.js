@@ -1,8 +1,8 @@
 const app = Vue.createApp({
     data: () => ({
         title: "Gradient Generator",
-        firstColor: "#000000",
-        secondColor: "#000000",
+        firstColor: "#d5ee11",
+        secondColor: "#f59e24",
         orientation: 1
     }),
     computed: {
