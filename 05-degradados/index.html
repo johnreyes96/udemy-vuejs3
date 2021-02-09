@@ -35,6 +35,19 @@
                <label>
                    <input :value="setColor" type="text">
                </label>
+               <br>
+               <label>
+                   <input v-model.number="orientation" value="1" type="radio"> Right
+               </label>
+               <label>
+                   <input v-model.number="orientation" value="2" type="radio"> Left
+               </label>
+               <label>
+                   <input v-model.number="orientation" value="3" type="radio"> Top
+               </label>
+               <label>
+                   <input v-model.number="orientation" value="4" type="radio"> Bottom
+               </label>
            </form>
            <br>
            <div class="area" :style="setColor"></div>
