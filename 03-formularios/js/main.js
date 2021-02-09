@@ -4,7 +4,8 @@ const app = Vue.createApp({
         data: {
             name: "",
             age: 15,
-            langs: []
+            langs: [],
+            gener: "m"
         }
     })
 });
