@@ -13,7 +13,7 @@
 <body>
     <div id="app">
         <h1>{{ title }}</h1>
-        <form>
+        <form @submit.prevent="handleSubmit()">
             <input v-model.trim="data.name" placeholder="Nombre" type="text">
 
             <input v-model.number="data.age" min="15" max="100" type="number">
@@ -36,11 +36,11 @@
 
             <input v-model="data.gener" value="f" id="woman" type="radio">
             <label for="woman">Mujer</label>
-        </form>
 
-        <p>
-            {{ data }}
-        </p>
+            <hr>
+
+            <input type="submit">
+        </form>
     </div>
 
     <script src="./js/main.js"></script>

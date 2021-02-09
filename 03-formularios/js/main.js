@@ -7,5 +7,10 @@ const app = Vue.createApp({
             langs: [],
             gener: "m"
         }
-    })
+    }),
+    methods: {
+        handleSubmit() {
+            console.log(this.data)
+        }
+    }
 });
