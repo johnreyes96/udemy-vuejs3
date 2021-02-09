@@ -14,6 +14,17 @@
    <div id="app">
        <h1>{{ title }}</h1>
        <hr>
+       <form>
+           <label> Color 1:
+                <input v-model="firstColor" type="color">
+           </label>
+           <label> Color 2:
+                <input v-model="secondColor" type="color">
+           </label>
+
+           <p> HEX1: {{ firstColor }}</p>
+           <p> HEX1: {{ secondColor }}</p>
+       </form>
    </div>
 
    <script src="./js/main.js"></script>
