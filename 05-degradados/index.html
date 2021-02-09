@@ -22,8 +22,8 @@
                 <input v-model="secondColor" type="color">
            </label>
 
-           <p> HEX1: {{ firstColor }}</p>
-           <p> HEX1: {{ secondColor }}</p>
+           <p> HEX 1: {{ firstColor }}</p>
+           <p> HEX 2: {{ secondColor }}</p>
 
            <form>
                <label>
@@ -31,16 +31,16 @@
                </label>
                <br>
                <label>
-                   <input v-model.number="orientation" value="1" type="radio"> Right
+                   <input v-model="orientation" value="right" type="radio"> Right
                </label>
                <label>
-                   <input v-model.number="orientation" value="2" type="radio"> Left
+                   <input v-model="orientation" value="left" type="radio"> Left
                </label>
                <label>
-                   <input v-model.number="orientation" value="3" type="radio"> Top
+                   <input v-model="orientation" value="top" type="radio"> Top
                </label>
                <label>
-                   <input v-model.number="orientation" value="4" type="radio"> Bottom
+                   <input v-model="orientation" value="bottom" type="radio"> Bottom
                </label>
            </form>
            <br>
