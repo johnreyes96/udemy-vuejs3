@@ -2,6 +2,8 @@ const CACHE_NAME = "v1_cache_gradient_generator"
 const urlsToCache = [
     "./",
     "./?umt_source=web_app_manifest",
+    "./pages/fallback.html",
+    "./../css/style.css",
     "./img/favicon.png",
     "./img/icon32.png",
     "./img/icon64.png",
@@ -51,6 +53,6 @@ self.addEventListener("fetch", e => {
                 return res;
             }
             return fetch(e.request);
-        })
+        }).catch(() => caches.match("./pages/fallback.html"))
     )
 })
