@@ -12,10 +12,16 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ title }}</h1>
+        <h1 style="text-align: center">{{ title }}</h1>
         <hr>
 
-        <p>{{ movieData }}</p>
+        <div class="container">
+            <h3>Movie: <span style="color: crimson">{{ movieData.Title }}</span></h3>
+            <h4>Year: <span style="color: green" >{{ movieData.Year }}</span></h4>
+            <h4><p>Genre: <strong style="color: indigo">{{ movieData.Genre }}</strong></p></h4>
+            <h4>Actors: <span style="color: orangered">{{ movieData.Actors }}</span></h4>
+            <img :src="movieData.Poster" :alt="movieData.imbdID">
+        </div>
     </div>
 
     <script src="./js/main.js"></script>
