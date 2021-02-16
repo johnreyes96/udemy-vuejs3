@@ -15,6 +15,14 @@
     <div id="app">
         <h1>{{ title }}</h1>
         <hr>
+
+        <form @submit.prevent="getPost">
+            <label> ID Post: 
+                <input v-model.number="post" type="number">
+            </label>
+            <input type="submit" value="Get Post">
+        </form>
+
         <div v-for="user in data" :key="data.id" class="container">
         </div>
     </div>
