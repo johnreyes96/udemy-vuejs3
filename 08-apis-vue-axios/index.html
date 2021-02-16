@@ -19,7 +19,7 @@
             <h2>Name: {{ user.name }}</h2>
             <h3>Email: {{ user.email }}</h3>
             <h4>Phone: {{ user.phone }}</h4>
-            <a :href="user.website" target="_blank">{{ user.website }} website</a>
+            <a :href="`https://${user.website}`" target="_blank">{{ user.website }} website</a>
         </div>
     </div>
 

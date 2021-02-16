@@ -1,6 +1,6 @@
 const app = Vue.createApp({
     data: () => ({
-        title: "Peticiones Fetch",
+        title: "Peticiones Axios",
         data: []
     }),
     created() {
