@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data: () => ({
         title: "Peticiones con Parametros",
         post: 5,
-        data: []
+        data: {}
     }),
     created() {
         this.getPost();
@@ -12,7 +12,7 @@ const app = Vue.createApp({
             const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${this.post}`);
             const { userId } = data;
             const { data: dataUser } = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
-            console.log(dataUser);
+            this.data = dataUser;
         }
     }
 });

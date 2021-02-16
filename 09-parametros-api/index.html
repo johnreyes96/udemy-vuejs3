@@ -23,7 +23,11 @@
             <input type="submit" value="Get Post">
         </form>
 
-        <div v-for="user in data" :key="data.id" class="container">
+        <div class="container">
+            <p>Nombre: {{ data.name }}</p>
+            <p>Email: {{ data.email }}</p>
+            <p>Número telefonico: {{ data.phone }}</p>
+            <p>Nombre de usuario: <strong>{{ data.username }}</strong></p>
         </div>
     </div>
 
