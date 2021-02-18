@@ -1,0 +1,27 @@
+html, body {
+    background-color: #202124;
+    color: whitesmoke;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.style {
+    text-align: center;
+}
+
+.spanTitle {
+    color: crimson;
+}
+
+.spanYear {
+    color: #68ad68;
+}
+
+.spanGenre {
+    color: #8a69a1;
+}
+
+.spanActors {
+    color: #fd9570;
+}

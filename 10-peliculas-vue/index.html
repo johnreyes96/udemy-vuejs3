@@ -4,14 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buscador de peliculas con API externa de OMBd y Vue 3">
     <title>Api Movies</title>
+
+    <!-- Metadata para PWA -->
+    <!-- Modificar color barra de estado ANDROID -->
+    <meta name="theme-color" content="#202124">
+    <!-- Optimizaciones de SEO -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <!-- Modificar barra de estado IOS -->
+    <meta name="mobile-web-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- / Metadata para PWA -->
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    <link rel="apple-touch-startup-image" href="./img/favicon.png">
+    <!-- /Icons -->
+
+    <!-- Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <!-- /Manifest -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- /CSS -->
+    
     <!-- JS -->
     <script src="https://unpkg.com/vue@next"></script>
     <!-- /JS -->
 </head>
 <body>
     <div id="app">
-        <h1 style="text-align: center">{{ title }}</h1>
+        <h1 class="title">{{ title }}</h1>
         <hr>
 
         <form @submit.prevent="getMovie">
@@ -23,14 +50,15 @@
 
         <hr>
         <div class="container">
-            <h3>Movie: <span style="color: crimson">{{ movieData.Title }}</span></h3>
-            <h4>Year: <span style="color: green" >{{ movieData.Year }}</span></h4>
-            <h4><p>Genre: <strong style="color: indigo">{{ movieData.Genre }}</strong></p></h4>
-            <h4>Actors: <span style="color: orangered">{{ movieData.Actors }}</span></h4>
-            <img :src="movieData.Poster" :alt="movieData.imbdID">
+            <h2>Movie: <span class="spanTitle">{{ movieData.Title }}</span></h2>
+            <h3><p>Genre: <strong class="spanGenre">{{ movieData.Genre }}</strong></p></h3>
+            <h4>Year: <span class="spanYear" >{{ movieData.Year }}</span></h4>
+            <h4>Actors: <span class="spanActors">{{ movieData.Actors }}</span></h4>
+            <img width="300" height="425" :src="movieData.Poster" :alt="movieData.imdbID">
         </div>
     </div>
 
+    <script src="./load.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/mountApp.js"></script>
 </body>
