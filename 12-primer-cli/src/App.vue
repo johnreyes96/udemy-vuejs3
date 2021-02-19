@@ -1,17 +1,13 @@
 <template>
-  <h1>{{ title }} </h1>
+  <Header title="Portafolio GH" />
 </template>
 
 <script>
+import Header from "./components/Header";
+
 export default {
-  data: () => ({
-    title: "Componente APP"
-  })
+  components: {
+    Header
+  }
 };
 </script>
-
-<style scoped>
-h1 {
-  color: red;
-}
-</style>
