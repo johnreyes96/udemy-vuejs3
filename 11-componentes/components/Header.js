@@ -7,4 +7,4 @@ app.component("header-principal", {
     data: () => ({
         title: "Componentes desde Data"
     })
-})
+});
