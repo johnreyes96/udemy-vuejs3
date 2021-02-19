@@ -1,5 +1,5 @@
 const app = Vue.createApp({
     data: () => ({
-        title: "Componentes"
+        paises: ["México", "España", "Colombia", "Perú", "Estados Unidos"]
     })
 });

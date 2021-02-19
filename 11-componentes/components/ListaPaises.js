@@ -1,10 +1,12 @@
 app.component("lista-paises", {
     template: `
         <ol>
-            <li>{{ pais }}</li>
+            <li v-for="(pais, index) in paises" :key="index">
+                {{ pais }}
+            </li>
         </ol>
     `,
-    data: () => ({
-        pais: "Colombia"
-    })
+    props: {
+        paises: Array
+    }
 });
