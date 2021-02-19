@@ -14,6 +14,9 @@ export default {
 
 <style scoped>
 h1 {
-  color: red;
+  background-color: #333;
+  padding: 1rem;
+  text-align: center;
+  color: snow;
 }
 </style>
