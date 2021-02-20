@@ -1,13 +1,19 @@
 <template>
   <div id="footer">
     <footer>
-        <h3>&copy; John Reyes - {{ new Date().getFullYear() }}</h3>
+      <h3>&copy; John Reyes - {{ year }}</h3>
     </footer>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+    computed: {
+        year() {
+            return new Date().getFullYear();
+        }
+    }
+};
 </script>
 
 <style scoped>

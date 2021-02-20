@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header title="Portafolio GH" />
+    <Container />
     <Footer />
   </div>
 </template>
@@ -8,11 +9,13 @@
 <script>
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Container from "./components/Container";
 
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    Container
   }
 };
 </script>
