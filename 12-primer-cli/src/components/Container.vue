@@ -2,8 +2,8 @@
   <div id="container" class="container">
       <h2>Proyectos</h2>
       <hr>
-      <div id="cards">
-        <Card />
+      <div v-for="project in projects" :key="project.id" id="cards">
+        <Card :name="project.name" />
       </div>
   </div>
 </template>
@@ -12,6 +12,9 @@
 import Card from './Card';
 
 export default {
+  data: () => ({
+    projects: null
+  }),
   components: {
     Card
   },
@@ -22,6 +25,7 @@ export default {
     async getProjects() {
       const res = await fetch("https://api.github.com/users/johnreyes96/repos");
       const data = await res.json();
+      this.projects = data;
       console.log(data);
     }
   }
