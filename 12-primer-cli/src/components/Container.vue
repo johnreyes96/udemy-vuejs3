@@ -4,16 +4,6 @@
       <hr>
       <div id="cards">
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
       </div>
   </div>
 </template>
@@ -24,8 +14,18 @@ import Card from './Card';
 export default {
   components: {
     Card
+  },
+  mounted() {
+    this.getProjects();
+  },
+  methods: {
+    async getProjects() {
+      const res = await fetch("https://api.github.com/users/johnreyes96/repos");
+      const data = await res.json();
+      console.log(data);
+    }
   }
-}
+};
 </script>
 
 <style scoped>
