@@ -1,9 +1,10 @@
 <template>
   <div id="container" class="container">
       <h2>Proyectos</h2>
+      <img src="https://avatars.githubusercontent.com/u/21245667?v=4" loading="lazy" width="100" alt="Avatar de johnreyes96" class="image">
       <hr>
       <div v-for="project in projects" :key="project.id" id="cards">
-        <Card :name="project.name" />
+        <Card :name="project.name" :description="project.description" :author="project.owner.login" />
       </div>
   </div>
 </template>
@@ -33,6 +34,9 @@ export default {
 </script>
 
 <style scoped>
+.image {
+  border-radius: 50%;
+}
 #cards {
   display: flex;
   flex-wrap: wrap;
