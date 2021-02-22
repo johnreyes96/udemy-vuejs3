@@ -5,6 +5,7 @@
         <p>{{ description }}</p>
         <p><strong>{{ author }}</strong></p>
         <button-url />
+        <button-url color="red" />
       </div>
   </div>
 </template>
