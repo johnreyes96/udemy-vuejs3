@@ -5,7 +5,11 @@
       <hr>
       <loading v-if="load" />
       <div v-for="project in projects" :key="project.id" id="cards">
-        <Card :name="project.name" :description="project.description" :author="project.owner.login" />
+        <Card :name="project.name"
+              :description="project.description"
+              :author="project.owner.login"
+              :url="project.html_url"
+              :homepage="project.homepage" />
       </div>
   </div>
 </template>

@@ -4,8 +4,11 @@
         <h4>{{ name }}</h4>
         <p>{{ description }}</p>
         <p><strong>{{ author }}</strong></p>
-        <button-url />
-        <button-url color="red" />
+        <button-url :url="url" />
+        <button-url v-if="homepage != null"
+                    title="Deploy"
+                    :url="homepage"
+                    color="red" />
       </div>
   </div>
 </template>
@@ -18,7 +21,9 @@ export default {
     props: {
         name: String,
         description: String,
-        author: String
+        author: String,
+        url: String,
+        homepage: String
     }
 };
 </script>

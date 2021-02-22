@@ -1,11 +1,16 @@
 <template>
-  <a href="https://www.google.com" target="_blank" :class="setColor">Google</a>
+  <a :href="url" target="_blank" :class="setColor">{{ title }}</a>
 </template>
 
 <script>
 export default {
   props: {
-    color: String
+    color: String,
+    url: String,
+    title: {
+      type: String,
+      default: "GitHub"
+    }
   },
   computed: {
     setColor() {
