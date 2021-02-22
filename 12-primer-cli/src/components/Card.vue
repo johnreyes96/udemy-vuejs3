@@ -2,14 +2,20 @@
   <div id="cards">
       <div class="card">
         <h4>{{ name }}</h4>
+        <br>
         <p>{{ description }}</p>
+        <br>
         <p><strong>{{ author }}</strong></p>
+        <button-url />
       </div>
   </div>
 </template>
 
 <script>
+import ButtonUrl from './ButtonUrl.vue';
+
 export default {
+  components: { ButtonUrl },
     props: {
         name: String,
         description: String,
