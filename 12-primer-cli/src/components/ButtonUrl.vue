@@ -1,5 +1,5 @@
 <template>
-  <a href="https://www.google.com" target="_blank">Google</a>
+  <a href="https://www.google.com" target="_blank" class="btn btn-dark">Google</a>
 </template>
 
 <script>

@@ -49,8 +49,6 @@ export default {
 }
 .container {
   overflow: hidden;
-  margin: 1rem;
-  padding: 7px;
   border: solid 1px #eee;
   box-shadow: 1px 1px 4px #333;
   text-align: center;

@@ -1,7 +1,7 @@
 <template>
   <div id="footer">
     <footer>
-      <h3>&copy; John Reyes - {{ year }}</h3>
+      <h3 class="p-4">&copy; John Reyes - {{ year }}</h3>
     </footer>
   </div>
 </template>
@@ -19,7 +19,6 @@ export default {
 <style scoped>
 h3 {
   background-color: #333;
-  padding: 1rem;
   text-align: center;
   color: snow;
 }
