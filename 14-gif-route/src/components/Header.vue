@@ -13,6 +13,9 @@
           <router-link class="nav-link" aria-current="page" to="/">Home</router-link>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link" aria-current="page" to="/gifs">Gifs</router-link>
+        </li>
+        <li class="nav-item">
           <!--<a class="nav-link" href="#">About</a>-->
           <router-link class="nav-link" aria-current="page" to="/about">About</router-link>
         </li>
