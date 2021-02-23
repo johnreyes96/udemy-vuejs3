@@ -15,5 +15,11 @@ npm run serve
 npm run build
 ```
 
+### View upload page
+```
+https://www.hz-portafolio.tk/
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
