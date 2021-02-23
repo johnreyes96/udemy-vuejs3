@@ -9,16 +9,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <!--<a class="nav-link active" aria-current="page" href="#">Home</a>-->
+          <router-link class="nav-link" aria-current="page" to="/">Home</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <!--<a class="nav-link" href="#">About</a>-->
+          <router-link class="nav-link" aria-current="page" to="/about">About</router-link>
         </li>
       </ul>
     </div>
