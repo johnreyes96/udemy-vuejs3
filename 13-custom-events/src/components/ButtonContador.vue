@@ -1,6 +1,6 @@
 <template>
   <div id="btn-contador">
-    <button>{{ texto }}</button>
+    <button @click="ejecutarAccion">{{ texto }}</button>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
       default: "Aumentar",
     },
   },
+  methods: {
+    ejecutarAccion() {
+      this.$emit("accion");
+    }
+  }
 };
 </script>
 

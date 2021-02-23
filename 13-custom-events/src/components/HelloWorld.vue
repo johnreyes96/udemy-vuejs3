@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1>Contador: {{ contador }}</h1>
-    <button-contador />
-    <button-contador texto="Disminuir" />
+    <button-contador @accion="handleAumentar" />
+    <button-contador @accion="handleDisminuir" texto="Disminuir" />
   </div>
 </template>
 
@@ -11,9 +11,17 @@ import ButtonContador from "./ButtonContador.vue";
 export default {
   components: { ButtonContador },
   name: "HelloWorld",
-  props: {
-    contador: Number,
-  },
+  data: () => ({
+    contador: 0,
+  }),
+  methods: {
+    handleAumentar() {
+      this.contador++;
+    },
+    handleDisminuir() {
+      this.contador--;
+    }
+  }
 };
 </script>
 <style scoped>

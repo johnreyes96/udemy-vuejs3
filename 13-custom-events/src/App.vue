@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld :contador="contador" />
+  <HelloWorld  />
 </template>
 
 <script>
@@ -9,10 +9,7 @@ export default {
   name: "App",
   components: {
     HelloWorld,
-  },
-  data: () => ({
-    contador: 0,
-  }),
+  }
 };
 </script>
 
