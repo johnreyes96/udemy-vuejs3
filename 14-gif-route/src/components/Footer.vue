@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-      <footer class="text-center bg-dark text-white py-4">
+      <footer class="text-center bg-dark text-white py-3 bg-gradient">
           <h3>&copy; {{ getFullYear }} - John Reyes</h3>
       </footer>
   </div>
