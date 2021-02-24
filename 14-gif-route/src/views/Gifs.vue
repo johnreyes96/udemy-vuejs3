@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-3">
+  <div class="container mt-3 border">
     <h1 class="text-center">Gifs</h1>
     <hr>
   </div>
@@ -7,9 +7,17 @@
 
 <script>
 export default {
+  data: () => ({
+    gifs: null
+  }),
   mounted() {
-    const res = this.axios.get("https://jsonplaceholder.typicode.com/users")
-      .then(({ data }) => console.log(data));
+    this.getGifs();
+  },
+  methods: {
+    async getGifs() {
+      const res = await this.axios.get("https://api.giphy.com/v1/gifs/random?api_key=Xn9bsf30qq5WnNfS1BB5Fn7VwE2fDJdl");
+      console.log(res);
+    }
   }
 };
 </script>
