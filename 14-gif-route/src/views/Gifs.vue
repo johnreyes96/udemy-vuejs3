@@ -15,9 +15,9 @@ import GifCard from '../components/GifCard.vue';
 export default {
   components: { GifCard },
   data: () => ({
-    gifs: null
+    gifs: {}
   }),
-  mounted() {
+  created() {
     this.getGifs();
   },
   methods: {
