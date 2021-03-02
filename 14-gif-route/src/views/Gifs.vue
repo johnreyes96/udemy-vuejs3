@@ -24,10 +24,10 @@ export default {
     this.getGifs();
   },
   methods: {
-    async getGifs() {
+    async getGifs(search) {
       const { data } = await this.axios.get("https://api.giphy.com/v1/gifs/random?api_key=Xn9bsf30qq5WnNfS1BB5Fn7VwE2fDJdl");
       this.gifs = data.data;
-      console.log(data.data);
+      console.log(search);
     }
   }
 };
