@@ -3,6 +3,7 @@
     <h1 class="text-center">Gifs</h1>
     <search @accion="getGifs" />
     <hr>
+    <loading v-if="load" />
     <div class="row">
       <div class="col-12 col-lg-3" v-for="gif in gifs" :key="gif.id">
         <gif-card :data="gif" class="m-3 w-75" />
@@ -13,23 +14,25 @@
 
 <script>
 import GifCard from '../components/GifCard.vue';
+import Loading from '../components/Loading.vue';
 import Search from '../components/Search.vue';
 
 export default {
-  components: { GifCard, Search },
+  components: { GifCard, Search, Loading },
   data: () => ({
-    gifs: {}
+    gifs: {},
+    load: false
   }),
   created() {
     this.getGifs();
   },
   methods: {
     async getGifs(search = "goku") {
-      const key = "Xn9bsf30qq5WnNfS1BB5Fn7VwE2fDJdl"
+      const key = "Xn9bsf30qq5WnNfS1BB5Fn7VwE2fDJdl";
+      this.load = true;
       const { data } = await this.axios.get(`https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key}`);
       this.gifs = data.data;
-      console.log(data);
-      console.log(search);
+      this.load = false;
     }
   }
 };
