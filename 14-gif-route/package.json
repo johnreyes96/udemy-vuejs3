@@ -12,12 +12,6 @@
       "themeColor": "#444444",
       "appleMobileWebAppCapable": "yes",
       "appleMobileWebAppStatusBarStyle": "black-translucent"
-      ,"iconPaths": {
-        "favicon32": "",
-        "favicon16": "",
-        "appleTouchIcon": "",
-        "maskIcon": ""
-      }
     }
   },
   "dependencies": {
