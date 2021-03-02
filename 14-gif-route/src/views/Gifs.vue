@@ -4,8 +4,8 @@
     <search @accion="getGifs" />
     <hr>
     <div class="row">
-      <div class="col-12">
-        <gif-card :data="gifs" class="m-3 w-75" />
+      <div class="col-12" v-for="gif in gifs" :key="gif.id">
+        <gif-card :data="gif" class="m-3 w-75" />
       </div>
     </div>
   </div>
@@ -25,9 +25,9 @@ export default {
   },
   methods: {
     async getGifs(search) {
-      const { data } = await this.axios.get("https://api.giphy.com/v1/gifs/random?api_key=Xn9bsf30qq5WnNfS1BB5Fn7VwE2fDJdl");
+      const { data } = await this.axios.get("https://api.giphy.com/v1/gifs/search?q=goku&api_key=Xn9bsf30qq5WnNfS1BB5Fn7VwE2fDJdl");
       this.gifs = data.data;
-      console.log(search);
+      // console.log(data);
     }
   }
 };
