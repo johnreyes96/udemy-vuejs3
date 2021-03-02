@@ -6,6 +6,20 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
+  "vue": {
+    "pwa": {
+      "name": "Gif Router",
+      "themeColor": "#444444",
+      "appleMobileWebAppCapable": "yes",
+      "appleMobileWebAppStatusBarStyle": "black-translucent"
+      ,"iconPaths": {
+        "favicon32": "",
+        "favicon16": "",
+        "appleTouchIcon": "",
+        "maskIcon": ""
+      }
+    }
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
