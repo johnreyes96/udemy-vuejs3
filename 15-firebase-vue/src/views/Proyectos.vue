@@ -1,9 +1,14 @@
 <template>
-  <h1>Vista Proyectos</h1>
+  <div class="container">
+    <h1>Vista Proyectos</h1>
+    <contenedor />
+  </div>
 </template>
 
 <script>
-export default {
+import Contenedor from '../components/Contenedor.vue'
 
-}
+export default {
+  components: { Contenedor }
+};
 </script>
