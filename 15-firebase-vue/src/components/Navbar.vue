@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper light-blue">
         <router-link to="/" class="brand-logo">Proyectos</router-link>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
@@ -12,7 +12,7 @@
                 <router-link to="/about">About</router-link>
             </li>
             <li>
-                <router-link to="/proyectos" class="waves-effect waves-light btn">Proyectos</router-link>
+                <router-link to="/proyectos" class="waves-effect waves-light btn red lighten">Proyectos</router-link>
             </li>
         </ul>
         </div>
