@@ -9,8 +9,12 @@
           </div>
           <div class="card-action">
             <div class="row">
-              <a class="col s6 waves-effect waves-light btn">Editar</a>
-              <a class="col s6 waves-effect waves-light btn">Eliminar</a>
+              <a class="col s6 waves-effect waves-light btn">
+                <span class="material-icons">create</span>
+              </a>
+              <a class="col s6 waves-effect waves-light btn">
+                <span class="material-icons">delete</span>
+              </a>
             </div>
           </div>
         </div>
