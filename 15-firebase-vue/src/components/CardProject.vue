@@ -4,6 +4,7 @@
       <div class="card-content">
         <span class="card-title">Proyecto 1</span>
           <p>Descripción de mi proyecto</p>
+          <p>Tecnologías: </p>
       </div>
       <div class="card-action">
         <div class="row">
