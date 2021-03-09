@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="row">
-        <form class="col s12">
+        <form @submit.prevent="createProject" class="col s12">
             <div class="row">
                 <div class="input-field col s12">
                     <input v-model="project.title" id="first_name" type="text" class="validate">
@@ -41,7 +41,6 @@
             </div>
         </form>
     </div>
-    {{project}}
   </div>
 </template>
 
@@ -54,6 +53,18 @@ export default {
             langs: [],
             status: true
         }
-    })
+    }),
+    methods: {
+        async createProject() {
+            // console.log(this.project);
+            await fetch("https://crud-vue-2df48-default-rtdb.firebaseio.com/projects.json", {
+                method: "POST",
+                body: JSON.stringify(this.project)
+            });
+            // const data = await res.json();
+            // this.projects = data;
+            // console.log(data);
+        }
+    }
 };
 </script>
