@@ -10,10 +10,10 @@
           <div class="card-action">
             <div class="row">
               <a class="col s6 waves-effect waves-light btn">
-                <span class="material-icons">create</span>
+                <i class="material-icons">edit</i>
               </a>
               <a class="col s6 waves-effect waves-light btn">
-                <span class="material-icons">delete</span>
+                <i class="material-icons">delete</i>
               </a>
             </div>
           </div>
