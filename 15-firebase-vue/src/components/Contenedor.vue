@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col s12 m7">
-      <card-project />
+      <card-project :data="projects" />
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@ import CardProject from './CardProject.vue';
 
 export default {
   data: () => ({
-    projects: null
+    projects: []
   }),
   components: { CardProject },
   mounted() {
@@ -21,6 +21,7 @@ export default {
     async getProjects() {
       const res = await fetch("https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/project.json");
       const data = await res.json();
+      this.projects = data;
       console.log(data);
     }
   }
