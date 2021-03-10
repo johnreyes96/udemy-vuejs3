@@ -9,12 +9,12 @@
         <form @submit.prevent="createProject" class="col s12">
             <div class="row">
                 <div class="input-field col s12">
-                    <input v-model="project.title" id="first_name" type="text" class="validate">
-                    <label for="first_name">Nombre del Proyecto</label>
+                    <input v-model="project.title" placeholder="Nombre del proyecto" id="first_name" type="text" class="validate">
+                    <label for="first_name"></label>
                 </div>
                 <div class="input-field col s12">
-                    <input v-model="project.description" id="last_name" type="text" class="validate">
-                    <label for="last_name">Descripción del Proyecto</label>
+                    <input v-model="project.description" placeholder="Descripción del proyecto" id="last_name" type="text" class="validate">
+                    <label for="last_name"></label>
                 </div>
                 <p>
                     <label>
@@ -52,12 +52,7 @@
 <script>
 export default {
     data: () => ({
-        project: {
-            title: "",
-            description: "",
-            langs: [],
-            status: true
-        }
+        project: {}
     }),
     mounted() {
         this.getProject();
@@ -67,7 +62,7 @@ export default {
             const id = this.$route.params.id;
             const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${id}.json`);
             const data = await res.json();
-            console.log(data);
+            this.project = data;
         }
         // async createProject() {
         //     // console.log(this.project);
