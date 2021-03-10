@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col s12 m7">
-      <card-project :data="projects" />
+      <card-project v-for="(project, i) in projects" :key="i" :data="project" />
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
       for (let i in data) {
         this.projects.push(data[i]);
       }
-      console.log(this.projects);
+      // console.log(this.projects);
     }
   }
 };

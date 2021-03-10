@@ -4,7 +4,7 @@
       <div class="card-content">
         <span class="card-title">{{ data.title }}</span>
           <p>{{ data.description }} </p>
-          <p>Tecnologías: {{ data.langs }} </p>
+          <p>Tecnologías: <span v-for="(lang, i) in data.langs" :key="i">{{ i < data.langs.length - 1 ? `${lang.toUpperCase()}, ` : lang.toUpperCase() }}</span></p>
       </div>
       <div class="card-action">
         <div class="row">
