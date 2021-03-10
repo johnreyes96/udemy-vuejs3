@@ -22,7 +22,10 @@ export default {
       const res = await fetch("https://crud-vue-2df48-default-rtdb.firebaseio.com/projects.json");
       const data = await res.json();
       for (let i in data) {
-        this.projects.push(data[i]);
+        this.projects.push({
+          id: i,
+          data: data[i]
+        });
       }
       // console.log(this.projects);
     }
