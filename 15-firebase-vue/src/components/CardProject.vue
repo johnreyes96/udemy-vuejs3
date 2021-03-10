@@ -28,10 +28,12 @@ export default {
     methods: {
       async deleteProject() {
         const id = this.data.id;
-        await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${id}.json`, {
+        const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${id}.json`, {
           method: "PATCH",
           body: JSON.stringify({ status: false })
         });
+        const data = await res.json();
+        this.data.data.status = data["status"];
       }
     }
 };
