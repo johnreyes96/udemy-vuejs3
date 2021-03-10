@@ -59,7 +59,16 @@ export default {
             status: true
         }
     }),
+    mounted() {
+        this.getProject();
+    },
     methods: {
+        async getProject() {
+            const id = this.$route.params.id;
+            const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${id}.json`);
+            const data = await res.json();
+            console.log(data);
+        }
         // async createProject() {
         //     // console.log(this.project);
         //     await fetch("https://crud-vue-2df48-default-rtdb.firebaseio.com/projects.json", {
