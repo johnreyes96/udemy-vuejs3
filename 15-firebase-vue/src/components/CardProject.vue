@@ -1,5 +1,5 @@
 <template>
-  <div class="card horizontal">
+  <div class="card horizontal" v-if="data.data.status">
     <div class="card-stacked">
       <div class="card-content">
         <span class="card-title">{{ data.data.title }}</span>
@@ -11,9 +11,9 @@
           <router-link :to="`/edit-project/${data.id}`" class="col s6 waves-effect waves-light btn amber darken-3">
             <i class="material-icons">edit</i>
           </router-link>
-          <a class="col s6 waves-effect waves-light btn red darken-3">
+          <button @click="deleteProject" class="col s6 waves-effect waves-light btn red darken-3">
             <i class="material-icons">delete</i>
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -24,6 +24,15 @@
 export default {
     props: {
         data: Object
+    },
+    methods: {
+      async deleteProject() {
+        const id = this.data.id;
+        await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${id}.json`, {
+          method: "PATCH",
+          body: JSON.stringify({ status: false })
+        });
+      }
     }
 };
 </script>
