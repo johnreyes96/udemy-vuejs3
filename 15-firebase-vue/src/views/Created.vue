@@ -1,6 +1,11 @@
 <template>
   <div class="container">
       <div class="row">
+          <router-link to="/proyectos" class="col s12 waves-effect waves-light btn amber darken-3">
+            <i class="material-icons">arrow_back</i> Regresar a la lista
+          </router-link>
+      </div>
+      <div class="row">
         <form @submit.prevent="createProject" class="col s12">
             <div class="row">
                 <div class="input-field col s12">
