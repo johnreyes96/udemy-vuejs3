@@ -6,7 +6,7 @@
           </router-link>
       </div>
       <div class="row">
-        <form @submit.prevent="createProject" class="col s12">
+        <form @submit.prevent="updateProject" class="col s12">
             <div class="row">
                 <div class="input-field col s12">
                     <input v-model="project.title" placeholder="Nombre del proyecto" id="first_name" type="text" class="validate">
@@ -51,29 +51,30 @@
 
 <script>
 export default {
-    data: () => ({
-        project: {}
-    }),
+    data() {
+        return {
+            project: {},
+            id: this.$route.params.id
+        }
+    },
     mounted() {
         this.getProject();
     },
     methods: {
         async getProject() {
-            const id = this.$route.params.id;
-            const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${id}.json`);
+            const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${this.id}.json`);
             const data = await res.json();
             this.project = data;
+        },
+        async updateProject() {
+            await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${this.id}.json`, {
+                method: "PATCH",
+                body: JSON.stringify(this.project)
+            });
+            // const data = await res.json();
+            // this.projects = data;
+            // console.log(data);
         }
-        // async createProject() {
-        //     // console.log(this.project);
-        //     await fetch("https://crud-vue-2df48-default-rtdb.firebaseio.com/projects.json", {
-        //         method: "POST",
-        //         body: JSON.stringify(this.project)
-        //     });
-        //     // const data = await res.json();
-        //     // this.projects = data;
-        //     // console.log(data);
-        // }
     }
 };
 </script>
