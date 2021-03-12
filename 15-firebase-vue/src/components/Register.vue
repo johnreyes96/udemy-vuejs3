@@ -32,9 +32,18 @@ export default {
         confirmPassword: ""
     }),
     methods: {
-        validarUsuario() {
+        async validarUsuario() {
             if (this.email != "" && this.password.length > 5 && this.password === this.confirmPassword) {
-                return console.log("Contraseña validas");
+                const API_KEY = "AIzaSyAJwGMX80PQCBWVzCbKslolUlsEp2QZiOA";
+                const res = await fetch (`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        email: this.email,
+                        password: this.password,
+                        returnSecureToken: true
+                    })
+                });
+                return console.log(await res.json());
             } else {
                 return;
             }
