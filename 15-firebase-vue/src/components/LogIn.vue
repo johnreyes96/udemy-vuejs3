@@ -55,6 +55,7 @@ export default {
                     this.errors = true;
                 } else {
                     this.errors = false;
+                    localStorage.setItem("user", JSON.stringify(data));
                     router.push("/proyectos");
                 }
                 return;
