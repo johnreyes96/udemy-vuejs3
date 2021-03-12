@@ -22,12 +22,11 @@
 export default {
     data: () => ({
         email: "",
-        password: "",
-        confirmPassword: ""
+        password: ""
     }),
     methods: {
         async validarUsuario() {
-            if (this.email != "" && this.password.length > 5 && this.password === this.confirmPassword) {
+            if (this.email != "" && this.password.length > 5) {
                 const API_KEY = "AIzaSyAJwGMX80PQCBWVzCbKslolUlsEp2QZiOA";
                 const res = await fetch (`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`, {
                     method: "POST",
