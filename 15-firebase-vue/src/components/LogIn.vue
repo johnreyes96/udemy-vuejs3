@@ -1,5 +1,15 @@
 <template>
   <div class="row">
+    <div v-if="errors" class="col s12 m7">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <h5>Email / Password inválidos</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <form @submit.prevent="validarUsuario" class="col s12">
       <div class="row">
         <div class="input-field col s12">
@@ -22,13 +32,14 @@
 export default {
     data: () => ({
         email: "",
-        password: ""
+        password: "",
+        errors: false
     }),
     methods: {
         async validarUsuario() {
             if (this.email != "" && this.password.length > 5) {
                 const API_KEY = "AIzaSyAJwGMX80PQCBWVzCbKslolUlsEp2QZiOA";
-                const res = await fetch (`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`, {
+                const res = await fetch (`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`, {
                     method: "POST",
                     body: JSON.stringify({
                         email: this.email,
@@ -36,7 +47,14 @@ export default {
                         returnSecureToken: true
                     })
                 });
-                return console.log(await res.json());
+                
+                const data = await res.json();
+                if (data.error) {
+                    this.errors = true;
+                } else {
+                    this.errors = false;
+                }
+                return;
             } else {
                 return;
             }
