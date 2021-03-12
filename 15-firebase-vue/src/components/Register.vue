@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import router from "../router/index";
+
 export default {
     data: () => ({
         email: "",
@@ -43,7 +45,8 @@ export default {
                         returnSecureToken: true
                     })
                 });
-                return console.log(await res.json());
+                console.log(await res.json());
+                router.push("/proyectos");
             } else {
                 return;
             }
