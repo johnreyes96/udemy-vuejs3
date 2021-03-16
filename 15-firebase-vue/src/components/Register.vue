@@ -45,7 +45,10 @@ export default {
                         returnSecureToken: true
                     })
                 });
-                console.log(await res.json());
+
+                const data = await res.json();
+                localStorage.setItem("user", JSON.stringify(data));
+                
                 router.push("/proyectos");
             } else {
                 return;
