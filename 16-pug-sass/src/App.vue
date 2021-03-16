@@ -7,6 +7,12 @@
 </template>
 
 <style lang="scss">
+$primary: #981263;
+
+h1 {
+  color: $primary;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

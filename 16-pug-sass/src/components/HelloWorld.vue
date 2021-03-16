@@ -20,9 +20,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$primary: #981263;
-
-h1 {
-  color: $primary;
-}
 </style>
