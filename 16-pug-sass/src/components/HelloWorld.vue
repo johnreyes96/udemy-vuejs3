@@ -4,8 +4,8 @@ div
   p lorem ipsum lorem ipsum lorem ipsum lorem ipsum
     span este es un span
     |Esto es mas parrafo.
-  span.personal Otro span
-  p#segundo esto es un parrafo con ID
+  //- span.personal Otro span
+  //p#segundo esto es un parrafo con ID
   p.colores#tam Parrafo con ID y class
 </template>
 
