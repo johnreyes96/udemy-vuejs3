@@ -1,10 +1,8 @@
 <template lang="pug">
 div
-  h1 Hola Mundo
-  <p>Vuejs</p>
+  h1 Tabulado
   p lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-  container
-  aside
+    span este es un span
 </template>
 
 <script>
