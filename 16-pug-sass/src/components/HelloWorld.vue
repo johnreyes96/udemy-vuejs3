@@ -1,12 +1,7 @@
 <template lang="pug">
 div
-  h1 Tabulado
-  p lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-    span este es un span
-    |Esto es mas parrafo.
-  //- span.personal Otro span
-  //p#segundo esto es un parrafo con ID
-  p.colores#tam Parrafo con ID y class
+  h1 Atributos
+  img.imagen.marco(src="https://cdn.pixabay.com/photo/2020/12/13/16/21/stork-5828727_960_720.jpg" width="500", height="400")
 </template>
 
 <script>
@@ -20,20 +15,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-span {
-  color: blue;
-}
-.personal {
-  color: orange;
-}
-#segundo {
-  color: red;
-}
-.colores{
-  color: green;
-}
-#tam{
-  font-weight: bolder;
+.imagen.marco {
+  border: 1em solid green;
 }
 h3 {
   margin: 40px 0 0;
