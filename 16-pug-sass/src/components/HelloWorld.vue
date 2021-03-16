@@ -33,6 +33,12 @@ ul {
     a {
       color: snow;
     }
+    &:hover {
+      background-color: blue;
+    }
+    &::after {
+      color: red;
+    }
   }
 }
 // ul li {
