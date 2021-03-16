@@ -1,6 +1,7 @@
 <template lang="pug">
 div
   h1 Hola Mundo
+  <p>Vuejs</p>
 </template>
 
 <script>
