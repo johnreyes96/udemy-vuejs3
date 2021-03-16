@@ -3,6 +3,7 @@ div
   h1 Tabulado
   p lorem ipsum lorem ipsum lorem ipsum lorem ipsum
     span este es un span
+    |Esto es mas parrafo.
 </template>
 
 <script>
