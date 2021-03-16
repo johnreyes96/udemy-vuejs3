@@ -1,5 +1,9 @@
 <template>
   <div class="row">
+    <div class="container">
+      <h1>Registrar</h1>
+      <hr>
+    </div>
     <form @submit.prevent="validarUsuario" class="col s12">
       <div class="row">
         <div class="input-field col s12">

@@ -1,5 +1,10 @@
 <template>
   <div class="row">
+    <div class="container">
+      <h1>Log In</h1>
+      <hr>
+    </div>
+
     <div v-if="errors" class="col s12 m7">
       <div class="card horizontal">
         <div class="card-stacked">
