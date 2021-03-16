@@ -20,7 +20,6 @@ export default {
   methods: {
     async getProjects() {
       const user = JSON.parse(localStorage.getItem("user"));
-      console.log(user);
 
       const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects.json?auth=${user.idToken}`);
       const data = await res.json();

@@ -61,8 +61,9 @@ export default {
     }),
     methods: {
         async createProject() {
-            // console.log(this.project);
-            await fetch("https://crud-vue-2df48-default-rtdb.firebaseio.com/projects.json", {
+            const user = JSON.parse(localStorage.getItem("user"));
+
+            await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects.json?auth=${user.idToken}`, {
                 method: "POST",
                 body: JSON.stringify(this.project)
             });
