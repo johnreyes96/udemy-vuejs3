@@ -30,7 +30,7 @@ export default {
         const id = this.data.id;
         const user = JSON.parse(localStorage.getItem("user"));
 
-        const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${id}.json?auth=${user.idToken}`, {
+        const res = await fetch(`https://crud-vue-2df48-default-rtdb.firebaseio.com/projects/${user.localId}/${id}.json?auth=${user.idToken}`, {
           method: "PATCH",
           body: JSON.stringify({ status: false })
         });
