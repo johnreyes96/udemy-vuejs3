@@ -2,6 +2,9 @@
 div
   h1 Hola Mundo
   <p>Vuejs</p>
+  p lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+  container
+  aside
 </template>
 
 <script>
