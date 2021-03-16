@@ -1,12 +1,17 @@
 <template lang="pug">
 div
-  h1 Atributos
-  img.imagen.marco(src="https://cdn.pixabay.com/photo/2020/12/13/16/21/stork-5828727_960_720.jpg" width="500", height="400")
+  h1 {{ title }}
+  ul
+    li(v-for="(persona, i) in personas" :key="i") {{ persona }}
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  data: () => ({
+    title: "Mensaje desde Vue",
+    personas: ["John", "Diana", "Dulce"]
+  }),
   props: {
     msg: String
   }
@@ -15,9 +20,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.imagen.marco {
-  border: 1em solid green;
-}
 h3 {
   margin: 40px 0 0;
 }
