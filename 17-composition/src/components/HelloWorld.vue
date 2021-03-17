@@ -3,8 +3,8 @@
     <h1>{{ title }}</h1>
     <hr>
     <h2 :style="{ color }">Contador: {{ contador }}</h2>
-    <button @click="aumentar">+</button>
-    <button @click="disminuir">-</button>
+    <btn btnText="Aumentar" @accion="aumentar" />
+    <btn btnText="Disminuir" @accion="disminuir" />
 
     <hr>
 
@@ -15,8 +15,10 @@
 
 <script>
 import { computed, ref } from "vue";
+import Btn from './Btn.vue';
 
 export default {
+  components: { Btn },
   name: 'HelloWorld',
   props: {
     msg: String
