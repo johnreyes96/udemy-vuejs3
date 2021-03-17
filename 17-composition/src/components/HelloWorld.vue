@@ -2,30 +2,30 @@
   <div>
     <h1>{{ title }}</h1>
     <hr>
-    <contador-uno />
-    <contador-uno />
-    <contador-dos />
-    <btn btnText="Aumentar" @accion="aumentar" />
-    <btn btnText="Disminuir" @accion="disminuir" />
+    <ol>
+      <li v-for="(post, i) in posts" :key="i">{{ post.title }}</li>
+    </ol>
   </div>
 </template>
 
 <script>
-import Btn from './Btn.vue';
-import ContadorUno from './ContadorUno.vue';
-import ContadorDos from './ContadorDos.vue';
-
-import { useContador } from "../hooks/useContador";
-
+import { onMounted, ref } from 'vue';
 export default {
-  components: { Btn, ContadorUno, ContadorDos },
   name: 'HelloWorld',
   props: {
     msg: String
   },
-  setup({ msg }) {
-    const title = msg;
-    return { title, ...useContador() };
+  setup() {
+    const title = "Hooks del Ciclo de vida";
+    const posts = ref([]);
+
+    onMounted(async() => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const data = await res.json();
+      posts.value = data;
+    })
+
+    return { title, posts };
   }
 };
 </script>
