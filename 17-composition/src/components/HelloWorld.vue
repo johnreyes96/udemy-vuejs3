@@ -18,8 +18,11 @@ import { ref } from "vue";
 
 export default {
   name: 'HelloWorld',
-  setup() {
-    const title = "Aprendiendo Composition";
+  props: {
+    msg: String
+  },
+  setup({ msg }) {
+    const title = msg;
     const contador = ref(0);
     const persona = ref({});
 
