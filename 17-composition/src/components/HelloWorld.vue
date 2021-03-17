@@ -7,10 +7,9 @@
 <script>
 export default {
   name: 'HelloWorld',
-  data() {
-    return {
-      title: "Composition"
-    }
+  setup() {
+    const title = "Composition";
+    return { title };
   }
 }
 </script>
