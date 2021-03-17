@@ -2,26 +2,36 @@
   <div>
     <h1>{{ title }}</h1>
     <hr>
-    <h2 :style="{ color }">Contador: {{ contador }}</h2>
+    <contador-uno />
     <btn btnText="Aumentar" @accion="aumentar" />
     <btn btnText="Disminuir" @accion="disminuir" />
   </div>
 </template>
 
 <script>
+import { computed, provide, ref } from 'vue';
 import Btn from './Btn.vue';
-import { useContador } from "../hooks/useContador";
+import ContadorUno from './ContadorUno.vue';
 
 export default {
-  components: { Btn },
+  components: { Btn, ContadorUno },
   name: 'HelloWorld',
   props: {
     msg: String
   },
   setup({ msg }) {
     const title = msg;
+    const contador = ref(0);
 
-    return { title, ...useContador() };
+    const color = computed(() => contador.value < 0 ? "red" : "green");
+
+    provide("valorContador", contador);
+    provide("color", color);
+
+    const aumentar = () => contador.value++;
+    const disminuir = () => contador.value--;
+    
+    return { title, color, aumentar, disminuir, title };
   }
 };
 </script>
