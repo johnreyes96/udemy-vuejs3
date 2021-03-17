@@ -2,19 +2,19 @@
   <div>
     <h1>{{ title }}</h1>
     <hr>
-    <h2>Contador: {{ contador }}</h2>
+    <h2 :style="{ color }">Contador: {{ contador }}</h2>
     <button @click="aumentar">+</button>
     <button @click="disminuir">-</button>
 
     <hr>
 
     <input type="text" v-model="persona.nombre">
-    <p>{{ persona }}</p>
+    <p>{{ color }}</p>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 export default {
   name: 'HelloWorld',
@@ -26,10 +26,12 @@ export default {
     const contador = ref(0);
     const persona = ref({});
 
+    const color = computed(() => contador.value < 0 ? "red" : "green");
+
     const aumentar = () => contador.value++;
     const disminuir = () => contador.value--;
 
-    return { title, contador, aumentar, disminuir, persona };
+    return { title, contador, aumentar, disminuir, persona, color };
   }
 };
 </script>
