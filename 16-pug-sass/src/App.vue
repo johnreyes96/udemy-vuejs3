@@ -1,10 +1,18 @@
-<template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <router-view/>
-  </div>
+<template lang="pug">
+div.nav
+  router-link(to="/") Home | 
+  router-link(to="/about") About
+  router-view
+  footer-pug
 </template>
+
+<script>
+import FooterPug from "./components/FooterPug";
+
+export default {
+  components: { FooterPug }
+};
+</script>
 
 <style lang="scss">
 $primary: #981263;
