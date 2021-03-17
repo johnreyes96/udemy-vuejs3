@@ -5,6 +5,11 @@
     <h2>Contador: {{ contador }}</h2>
     <button @click="aumentar">+</button>
     <button @click="disminuir">-</button>
+
+    <hr>
+
+    <input type="text" v-model="persona.nombre">
+    <p>{{ persona }}</p>
   </div>
 </template>
 
@@ -16,10 +21,12 @@ export default {
   setup() {
     const title = "Aprendiendo Composition";
     const contador = ref(0);
+    const persona = ref({});
+
     const aumentar = () => contador.value++;
     const disminuir = () => contador.value--;
-    
-    return { title, contador, aumentar, disminuir };
+
+    return { title, contador, aumentar, disminuir, persona };
   }
 };
 </script>
